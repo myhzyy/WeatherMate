@@ -1,0 +1,3 @@
+- make top container ✅
+- cloudy skies section ✅
+- weather section -
