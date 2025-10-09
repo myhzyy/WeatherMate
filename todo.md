@@ -8,7 +8,9 @@
 - get api data in SummaryCard ✅
 - get api data in HourlyForecast ✅
 - change app background ✅
-- add daytime / nighttime
+- add daytime / nighttime ✅
+- implement custom hook for updating date/time ✅
+- implement search button
 
 ---- TO ADD ----
 

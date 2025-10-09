@@ -1,17 +1,12 @@
-import { useEffect, useState } from "react";
 import "./App.css";
 import Header from "./components/Header";
 import SummaryCard from "./components/SummaryCard";
 import WeatherDetails from "./components/WeatherDetails";
 import HourlyForecast from "./components/HourlyForecast";
+import { useDaytime } from "./hooks/useDaytime";
 
 export default function App() {
-  const [isDay, setIsDay] = useState(false);
-
-  useEffect(() => {
-    const hour = new Date().getHours();
-    setIsDay(hour >= 6 && hour < 19);
-  }, []);
+  const isDay = useDaytime();
 
   return (
     <div className="h-screen w-full bg-gradient-to-b from-[#2b3452] via-[#495678] to-[#7d87a1] flex flex-col justify-start items-center pt-12 relative overflow-hidden text-white">
