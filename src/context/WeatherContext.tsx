@@ -6,8 +6,6 @@ const WeatherContext = createContext<WeatherData | null>(null);
 export function WeatherProvider({ children }: WeatherProviderProps) {
   const [weather, setWeather] = useState<WeatherData | null>(null);
 
-  console.log(weather);
-
   useEffect(() => {
     fetch(
       "https://api.weatherapi.com/v1/forecast.json?key=8e7e975c4aab4a8fb05180223250910&q=London&days=1"

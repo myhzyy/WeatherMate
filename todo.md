@@ -7,6 +7,8 @@
 - get api data in WeatherDetails ✅
 - get api data in SummaryCard ✅
 - get api data in HourlyForecast ✅
+- change app background ✅
+- add daytime / nighttime
 
 ---- TO ADD ----
 
