@@ -1,62 +1,41 @@
-export default function HourlyForecase() {
+import { useWeather } from "../hooks/useWeather";
+
+export default function HourlyForecast() {
+  const weather = useWeather();
+
+  if (!weather) {
+    return (
+      <div className="w-[80%] mt-6 p-4 rounded-[16px] bg-white/10 backdrop-blur-md border border-white/20 text-white text-center">
+        <p>Loading hourly forecast...</p>
+      </div>
+    );
+  }
+
+  const hours = weather.forecast.forecastday[0].hour.slice(0, 7);
+
   return (
-    <div className="w-[80%] mt-6 p-4 rounded-[16px] bg-white/10 backdrop-blur-md border border-white/20 text-white ">
-      <div className="flex justify-between text-center ">
-        {[
-          {
-            time: "Now",
-            temp: 15,
-            icon: "//cdn.weatherapi.com/weather/64x64/night/116.png",
-          },
-          {
-            time: "20",
-            temp: 14,
-            icon: "//cdn.weatherapi.com/weather/64x64/night/116.png",
-          },
-          {
-            time: "21",
-            temp: 13,
-            icon: "//cdn.weatherapi.com/weather/64x64/night/116.png",
-          },
-          {
-            time: "22",
-            temp: 13,
-            icon: "//cdn.weatherapi.com/weather/64x64/night/116.png",
-          },
-          {
-            time: "23",
-            temp: 12,
-            icon: "//cdn.weatherapi.com/weather/64x64/night/116.png",
-          },
-          {
-            time: "00",
-            temp: 12,
-            icon: "//cdn.weatherapi.com/weather/64x64/night/116.png",
-          },
-          {
-            time: "01",
-            temp: 11,
-            icon: "//cdn.weatherapi.com/weather/64x64/night/116.png",
-          },
-        ].map((hour, index) => (
-          <div
-            key={index}
-            className="flex flex-col items-center justify-center "
-          >
-            {/* Time */}
-            <p className="text-sm text-gray-300 mb-2">{hour.time}</p>
+    <div className="w-[80%] mt-6 p-4 rounded-[16px] bg-white/10 backdrop-blur-md border border-white/20 text-white">
+      <div className="flex justify-between text-center">
+        {hours.map((hour, index) => {
+          const timeLabel =
+            index === 0 ? "Now" : hour.time.split(" ")[1].slice(0, 2);
 
-            {/* Icon */}
-            <img
-              src={hour.icon}
-              alt="weather icon"
-              className="w-[32px] h-[32px] mb-2"
-            />
+          return (
+            <div
+              key={index}
+              className="flex flex-col items-center justify-center"
+            >
+              <p className="text-sm text-grey-300 mb-2">{timeLabel}</p>
+              <img
+                src={hour.condition.icon}
+                alt=""
+                className="w-[32px] h-[32px] mb-2"
+              />
 
-            {/* Temperature */}
-            <p className="text-sm font-medium">{hour.temp}°</p>
-          </div>
-        ))}
+              <p className="text-sm font-mediuk">{Math.round(hour.temp_c)}</p>
+            </div>
+          );
+        })}
       </div>
     </div>
   );
