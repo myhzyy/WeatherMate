@@ -1,23 +1,11 @@
+import { useWeather } from "../hooks/useWeather";
+
 export default function Header() {
-  const weather = {
-    location: {
-      name: "Kingston Upon Hull",
-      region: "East Riding of Yorkshire",
-      country: "United Kingdom",
-      localtime: "2025-10-09 19:13",
-    },
-    current: {
-      temp_c: 15.4,
-      feelslike_c: 15.4,
-      condition: {
-        text: "Partly cloudy",
-        icon: "//cdn.weatherapi.com/weather/64x64/night/116.png",
-      },
-      wind_kph: 14.4,
-      humidity: 77,
-      is_day: 0,
-    },
-  };
+  const weather = useWeather();
+
+  if (!weather) {
+    return <p>Loading weather..</p>;
+  }
 
   return (
     <div className="text-center w-[80%] text-white ">

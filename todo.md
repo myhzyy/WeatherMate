@@ -2,4 +2,4 @@
 - cloudy skies section ✅
 - weather section ✅
 - abstract sections into own components ✅
-- bring in API data and render dynamically
+- create a useContext for api data ✅
