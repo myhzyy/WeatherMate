@@ -1,3 +1,5 @@
 - make top container ✅
 - cloudy skies section ✅
-- weather section -
+- weather section ✅
+- abstract sections into own components ✅
+- bring in API data and render dynamically
