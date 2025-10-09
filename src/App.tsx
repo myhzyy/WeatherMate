@@ -86,9 +86,37 @@ export default function App() {
       </div>
 
       {/* weather section */}
+      <div className="w-[90%] mt-6 p-4 rounded-[16px] bg-white/10 backdrop-blur-md border border-white/20 text-white">
+        {/* Hourly Forecast Container */}
+        <div className="flex justify-between text-center">
+          {[
+            { time: "Now", temp: 15 },
+            { time: "20", temp: 14 },
+            { time: "21", temp: 13 },
+            { time: "22", temp: 13 },
+            { time: "23", temp: 12 },
+            { time: "00", temp: 12 },
+            { time: "01", temp: 11 },
+          ].map((hour, index) => (
+            <div
+              key={index}
+              className="flex flex-col items-center justify-center"
+            >
+              {/* Time */}
+              <p className="text-sm text-gray-200 mb-2">{hour.time}</p>
 
-      <div className="w-[80%] border-2 border-red-500 text-white flex ">
-        <p>13</p>
+              {/* Weather Icon */}
+              <img
+                src="//cdn.weatherapi.com/weather/64x64/night/116.png"
+                alt="icon"
+                className="w-[32px] h-[32px] mb-2"
+              />
+
+              {/* Temperature */}
+              <p className="text-sm font-medium">{hour.temp}13°</p>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
