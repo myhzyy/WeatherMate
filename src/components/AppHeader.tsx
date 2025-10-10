@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 export default function AppHeader() {
   const [times, setTimes] = useState({
@@ -36,10 +37,12 @@ export default function AppHeader() {
 
   return (
     <div className=" w-full flex flex-row justify-around items-center ">
-      <div className="flex gap-1">
-        <h1 className="text-lg font-semibold">WeatherMate</h1>
-        <p className="flex items-center">🌧️</p>
-      </div>
+      <Link to="/">
+        <div className="flex gap-1">
+          <h1 className="text-lg font-semibold">WeatherMate</h1>
+          <p className="flex items-center">🌧️</p>
+        </div>
+      </Link>
 
       <div className="flex flex-row gap-6 mt-[10px]">
         <div className="text-center">

@@ -18,6 +18,7 @@
 - added useNavigate to store data in the url rather than useState ✅
 - error handling for Weather Page ✅
 - add app header with app name ✅
+- abstract appheader into own utils function
 - 14 day tracking pop up (toast)
 - add click on weatherMate brings back to main screen
 - error handling for Main Page
@@ -25,8 +26,10 @@
 
 ---- TO ADD ----
 
-- 14 day tracking
-- change background color
 - render background imaged based on overcase / sunny conditions
+- favourites tab
 - fact of the day about the city - lightbulb
 - Math.round decimels
+- readme with features
+- add random weather related jokes / quotes - see if its raining cats and dogs typing animation
+- HourlyForecast times check ()
