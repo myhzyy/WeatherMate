@@ -17,9 +17,11 @@
 - added react router ✅
 - added useNavigate to store data in the url rather than useState ✅
 - error handling for Weather Page ✅
-- error handling for Main Page
 - add app header with app name ✅
-- Math.round decimels
+- 14 day tracking
+- add click on weatherMate brings back to main screen
+- error handling for Main Page
+- hide apiKey and endpoint
 
 ---- TO ADD ----
 
@@ -27,3 +29,4 @@
 - change background color
 - render background imaged based on overcase / sunny conditions
 - fact of the day about the city - lightbulb
+- Math.round decimels
