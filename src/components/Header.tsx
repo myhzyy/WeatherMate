@@ -27,13 +27,14 @@ export default function Header() {
 
         <h2 className="text-6xl font-light mb-2">{weather.current.temp_c}°</h2>
 
-        <p className="text-lg text-gray-300 mb-1">
+        <p className="text-lg text-white/80 mb-1">
           {weather.current.condition.text}
         </p>
 
-        <p className="text-sm text-gray-400">
+        <p className="text-m text-white">
           Feels like {weather.current.feelslike_c}°
         </p>
+        <p className="text-white/80 text-2xl">14 days tracking 📌</p>
       </div>
     </>
   );

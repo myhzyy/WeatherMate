@@ -18,7 +18,7 @@
 - added useNavigate to store data in the url rather than useState ✅
 - error handling for Weather Page ✅
 - add app header with app name ✅
-- 14 day tracking
+- 14 day tracking pop up (toast)
 - add click on weatherMate brings back to main screen
 - error handling for Main Page
 - hide apiKey and endpoint
