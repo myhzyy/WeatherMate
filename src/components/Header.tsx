@@ -1,27 +1,31 @@
 import { useWeather } from "../hooks/useWeather";
+import SearchButton from "./SearchButton";
 
 export default function Header() {
-  const weather = useWeather();
+  const { weather, fetchWeather } = useWeather();
 
   if (!weather) {
     return <p>Loading weather..</p>;
   }
 
   return (
-    <div className="text-center w-[80%] text-white ">
-      <h2 className="uppercase tracking-widest text-cyan-300 mb-2">Home</h2>
+    <>
+      <SearchButton />
+      <div className="text-center w-[80%] text-white ">
+        <h2 className="uppercase tracking-widest text-cyan-300 mb-2">Home</h2>
 
-      <h1 className="text-2xl font-semibold mb-1">{weather.location.name}</h1>
+        <h1 className="text-2xl font-semibold mb-1">{weather.location.name}</h1>
 
-      <h2 className="text-6xl font-light mb-2">{weather.current.temp_c}°</h2>
+        <h2 className="text-6xl font-light mb-2">{weather.current.temp_c}°</h2>
 
-      <p className="text-lg text-gray-300 mb-1">
-        {weather.current.condition.text}
-      </p>
+        <p className="text-lg text-gray-300 mb-1">
+          {weather.current.condition.text}
+        </p>
 
-      <p className="text-sm text-gray-400">
-        Feels like {weather.current.feelslike_c}°
-      </p>
-    </div>
+        <p className="text-sm text-gray-400">
+          Feels like {weather.current.feelslike_c}°
+        </p>
+      </div>
+    </>
   );
 }

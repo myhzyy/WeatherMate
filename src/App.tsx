@@ -4,7 +4,6 @@ import SummaryCard from "./components/SummaryCard";
 import WeatherDetails from "./components/WeatherDetails";
 import HourlyForecast from "./components/HourlyForecast";
 import { useDaytime } from "./hooks/useDaytime";
-import SearchButton from "./components/SearchButton";
 
 export default function App() {
   const isDay = useDaytime();
@@ -20,7 +19,6 @@ export default function App() {
 
       {/* Foreground content */}
       <div className="z-10 flex flex-col items-center w-full">
-        <SearchButton />
         <Header />
         <SummaryCard />
         <WeatherDetails />

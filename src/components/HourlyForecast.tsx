@@ -1,7 +1,7 @@
 import { useWeather } from "../hooks/useWeather";
 
 export default function HourlyForecast() {
-  const weather = useWeather();
+  const { weather } = useWeather();
 
   if (!weather) {
     return (

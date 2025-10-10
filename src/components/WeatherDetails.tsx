@@ -1,7 +1,7 @@
 import { useWeather } from "../hooks/useWeather";
 
 export default function WeatherDetails() {
-  const weather = useWeather();
+  const { weather } = useWeather();
 
   if (!weather) {
     return <p>Loading weather..</p>;
