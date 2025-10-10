@@ -12,9 +12,14 @@ export default function Header() {
     return <p>No weather data yet...</p>;
   }
 
+  console.log(weather);
+
   return (
     <>
+      {/* Search Button */}
+
       <SearchButton />
+
       <div className="text-center w-[80%] text-white ">
         <h2 className="uppercase tracking-widest text-cyan-300 mb-2">Home</h2>
 

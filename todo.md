@@ -11,7 +11,13 @@
 - add daytime / nighttime ✅
 - implement custom hook for updating date/time ✅
 - implement search button ✅
-- error handing for failed API routes
+- error handing for failed API routes ✅
+- create front page routing ✅
+- fix temp error handing for main page ✅
+- added react router ✅
+- added useNavigate to store data in the url rather than useState ✅
+- error handling for Weather Page
+- error handling for Main Page
 - Math.round decimels
 
 ---- TO ADD ----

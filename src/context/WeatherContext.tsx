@@ -32,10 +32,10 @@ export function WeatherProvider({ children }: WeatherProviderProps) {
       }
 
       setWeather(data);
+      setError(null);
     } catch (err) {
       const error = err as Error;
       setError(error.message || "Something went wrong. Try again.");
-      setWeather(null);
     } finally {
       setLoading(false);
     }
