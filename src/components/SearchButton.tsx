@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useWeather } from "../hooks/useWeather";
 
 export default function SearchButton() {
-  const { weather, fetchWeather } = useWeather();
+  const { fetchWeather } = useWeather();
   const [city, setCity] = useState("");
 
   function handleKeyPress(e: React.KeyboardEvent<HTMLInputElement>) {

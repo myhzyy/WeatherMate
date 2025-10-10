@@ -9,16 +9,35 @@ const WeatherContext = createContext<WeatherContextType | null>(null);
 
 export function WeatherProvider({ children }: WeatherProviderProps) {
   const [weather, setWeather] = useState<WeatherData | null>(null);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   async function fetchWeather(city: string) {
     try {
+      setLoading(true);
+      setError(null);
+
       const res = await fetch(
         `https://api.weatherapi.com/v1/forecast.json?key=8e7e975c4aab4a8fb05180223250910&q=${city}&days=1`
       );
+
+      if (!res.ok) {
+        throw new Error("Not a valid city!");
+      }
+
       const data = await res.json();
+
+      if (data.error) {
+        throw new Error(data.error.message);
+      }
+
       setWeather(data);
     } catch (err) {
-      console.error("Failed to fetch weather data", err);
+      const error = err as Error;
+      setError(error.message || "Something went wrong. Try again.");
+      setWeather(null);
+    } finally {
+      setLoading(false);
     }
   }
 
@@ -27,7 +46,7 @@ export function WeatherProvider({ children }: WeatherProviderProps) {
   }, []);
 
   return (
-    <WeatherContext.Provider value={{ weather, fetchWeather }}>
+    <WeatherContext.Provider value={{ weather, fetchWeather, loading, error }}>
       {children}
     </WeatherContext.Provider>
   );

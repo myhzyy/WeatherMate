@@ -38,4 +38,6 @@ export interface WeatherData {
 export interface WeatherContextType {
   weather: WeatherData | null;
   fetchWeather: (city: string) => Promise<void>;
+  loading: boolean;
+  error: string | null;
 }

@@ -4,9 +4,11 @@ import SummaryCard from "./components/SummaryCard";
 import WeatherDetails from "./components/WeatherDetails";
 import HourlyForecast from "./components/HourlyForecast";
 import { useDaytime } from "./hooks/useDaytime";
+import { useWeather } from "./hooks/useWeather";
 
 export default function App() {
   const isDay = useDaytime();
+  const { loading, error } = useWeather();
 
   return (
     <div className="h-screen w-full bg-gradient-to-b from-[#2b3452] via-[#495678] to-[#7d87a1] flex flex-col justify-start items-center pt-12 relative overflow-hidden text-white">
@@ -17,13 +19,23 @@ export default function App() {
         }`}
       ></div>
 
-      {/* Foreground content */}
-      <div className="z-10 flex flex-col items-center w-full">
-        <Header />
-        <SummaryCard />
-        <WeatherDetails />
-        <HourlyForecast />
-      </div>
+      {loading ? (
+        <div className="z-10 flex flex-col items-center justify-center h-full text-white/90">
+          <p className="text-lg animate-pulse">Loading weather data...</p>
+        </div>
+      ) : error ? (
+        <div className="z-100 flex flex-col items-center justify-center h-full text-white">
+          <p className="text-lg font-semibold">{error}</p>
+        </div>
+      ) : (
+        // Foreground content
+        <div className="z-10 flex flex-col items-center w-full">
+          <Header />
+          <SummaryCard />
+          <WeatherDetails />
+          <HourlyForecast />
+        </div>
+      )}
     </div>
   );
 }

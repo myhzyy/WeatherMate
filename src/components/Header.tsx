@@ -2,10 +2,14 @@ import { useWeather } from "../hooks/useWeather";
 import SearchButton from "./SearchButton";
 
 export default function Header() {
-  const { weather, fetchWeather } = useWeather();
+  const { weather, loading } = useWeather();
+
+  if (loading) {
+    return <p className="text-white/70 mt-4">Loading weather data...</p>;
+  }
 
   if (!weather) {
-    return <p>Loading weather..</p>;
+    return <p>No weather data yet...</p>;
   }
 
   return (

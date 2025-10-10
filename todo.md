@@ -10,7 +10,7 @@
 - change app background ✅
 - add daytime / nighttime ✅
 - implement custom hook for updating date/time ✅
-- implement search button
+- implement search button ✅
 - error handing for failed API routes
 - Math.round decimels
 
