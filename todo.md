@@ -11,7 +11,11 @@
 - add daytime / nighttime ✅
 - implement custom hook for updating date/time ✅
 - implement search button
+- error handing for failed API routes
+- Math.round decimels
 
 ---- TO ADD ----
 
 - 14 day tracking
+- change background color
+- render background imaged based on overcase / sunny conditions
