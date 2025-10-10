@@ -12,6 +12,11 @@ export function WeatherProvider({ children }: WeatherProviderProps) {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
+  useEffect(() => {
+    const lastCity = localStorage.getItem("lastCity") || "London";
+    fetchWeather(lastCity);
+  }, []);
+
   async function fetchWeather(city: string) {
     try {
       setLoading(true);

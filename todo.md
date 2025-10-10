@@ -16,8 +16,9 @@
 - fix temp error handing for main page ✅
 - added react router ✅
 - added useNavigate to store data in the url rather than useState ✅
-- error handling for Weather Page
+- error handling for Weather Page ✅
 - error handling for Main Page
+- add app header with app name ✅
 - Math.round decimels
 
 ---- TO ADD ----
@@ -25,3 +26,4 @@
 - 14 day tracking
 - change background color
 - render background imaged based on overcase / sunny conditions
+- fact of the day about the city - lightbulb

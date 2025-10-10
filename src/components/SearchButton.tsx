@@ -13,7 +13,6 @@ export default function SearchButton() {
     }
   }
 
-  // Show toast briefly when error changes
   useEffect(() => {
     if (error) {
       setShowToast(true);
@@ -38,7 +37,7 @@ export default function SearchButton() {
 
       {/* Error toast */}
       {showToast && error && (
-        <div className="absolute top-[45px] bg-red-600/90 text-white text-sm px-4 py-2 rounded-md shadow-lg animate-fadeIn">
+        <div className="absolute top-[45px] bg-red-600/90 text-white text-sm px-4 py-2 rounded-md shadow-lg animate-fadeIn mr-6">
           ❌ {error}
         </div>
       )}
