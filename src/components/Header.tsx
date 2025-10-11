@@ -14,6 +14,10 @@ export default function Header() {
     return <p>No weather data yet...</p>;
   }
 
+  const forecast = weather?.forecast?.forecastday || [];
+
+  console.log(forecast);
+
   return (
     <>
       {/* Search Button */}
@@ -62,22 +66,30 @@ export default function Header() {
 
             {/* Scroll container */}
             <div className="w-full flex flex-row items-center gap-4 overflow-x-auto scroll-smooth px-2">
-              {[...Array(7)].map((_, i) => (
-                <div
-                  key={i}
-                  className="min-w-[110px] h-[140px] rounded-[16px] border border-white/20 bg-white/10 shadow-md backdrop-blur-lg flex flex-col items-center justify-center hover:bg-white/20 hover:scale-105 transition-all duration-200 ease-in-out flex-shrink-0"
-                >
-                  <p className="text-sm text-white/80 mb-1">{`Oct ${
-                    10 + i
-                  }`}</p>
-                  <p className="text-3xl mb-1">
-                    {["☀️", "🌦️", "⛅", "🌧️", "🌤️", "🌩️", "☁️"][i % 7]}
-                  </p>
-                  <p className="text-white/90 text-sm">{`${18 - i}° / ${
-                    10 + (i % 3)
-                  }°`}</p>
-                </div>
-              ))}
+              {forecast.map((day, index) => {
+                return (
+                  <div
+                    key={index}
+                    className="min-w-[110px] h-[140px] border border-white/20 rounded-[16px] bg-white/10 shadow-md backdrop-blur-lg flex flex-col items-center justify-center hover:scale-105 ease-in-out"
+                  >
+                    <p className="text-sm text-white/80 mb-1">
+                      {new Date(day.date).toLocaleDateString("en-GB", {
+                        weekday: "short",
+                        day: "numeric",
+                      })}
+                    </p>
+                    <img
+                      src={day.day.condition.icon}
+                      alt={day.day.condition.text}
+                      className="w-[40px] h-[40px] mb-1"
+                    />
+                    <p className="text-white/90 text-sm font-semibold">
+                      {Math.round(day.day.maxtemp_c)}° /
+                      {Math.round(day.day.mintemp_c)}°
+                    </p>
+                  </div>
+                );
+              })}
             </div>
           </div>
         </div>

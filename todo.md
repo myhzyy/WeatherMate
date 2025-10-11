@@ -21,6 +21,7 @@
 - 14 day tracking pop up (toast) ✅
 - Abstract background container ✅
 - 7 days track app (real data implementation) ✅
+- 7 / 14 days tracking
 - abstract appheader into own utils function
 - header times also has weather
 - add click on weatherMate brings back to main screen
