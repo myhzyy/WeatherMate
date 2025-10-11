@@ -21,12 +21,12 @@
 - 14 day tracking pop up (toast) ✅
 - Abstract background container ✅
 - 7 days track app (real data implementation) ✅
-- 7 / 14 days tracking based on user click
-- abstract appheader into own utils function
+- 7 / 14 days tracking based on user click ✅
+- add click on weatherMate brings back to main screen (Link) ✅
+- abstract appheader into own utils function ✅
 - header times also has weather
-- add click on weatherMate brings back to main screen
 - error handling for Main Page
-- hide apiKey and endpoint
+- hide apiKey and endpoint (Next Js)
 
 ---- TO ADD ----
 
