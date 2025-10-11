@@ -1,6 +1,9 @@
+import { useWeather } from "../hooks/useWeather";
 import type { ForecastProps } from "../types/ForecastModelProps";
 
 export default function ForecastModel({ forecast, onClose }: ForecastProps) {
+  const { days, setDays } = useWeather();
+
   return (
     <div className="fixed inset-0 flex items-center justify-center z-50 bg-slate-900/20 backdrop-blur-sm">
       {/* Modal container */}
@@ -15,8 +18,19 @@ export default function ForecastModel({ forecast, onClose }: ForecastProps) {
 
         {/* Title */}
         <h2 className="text-xl font-semibold text-cyan-300 mb-5 tracking-wide">
-          7-Day Forecast
+          Forecast
         </h2>
+
+        <select
+          defaultValue={days}
+          className="mb-5 bg-transparent border border-white/30 text-white text-sm rounded-md px-3 py-1 outline-none cursor-pointer hover:border-cyan-300 transition"
+          onChange={(e: React.ChangeEvent<HTMLSelectElement>) =>
+            setDays(Number(e.target.value))
+          }
+        >
+          <option value="7">7 days</option>
+          <option value="14">14 days</option>
+        </select>
 
         {/* Scroll container */}
         <div className="w-full flex flex-row items-center gap-4 overflow-x-auto scroll-smooth px-2">

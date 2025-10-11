@@ -12,6 +12,7 @@ export function WeatherProvider({ children }: WeatherProviderProps) {
   const [weather, setWeather] = useState<WeatherData | null>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [days, setDays] = useState<number>(7);
 
   useEffect(() => {
     const lastCity = localStorage.getItem("lastCity") || "London";
@@ -24,7 +25,7 @@ export function WeatherProvider({ children }: WeatherProviderProps) {
       setError(null);
 
       const res = await fetch(
-        `https://api.weatherapi.com/v1/forecast.json?key=8e7e975c4aab4a8fb05180223250910&q=${city}&days=14`
+        `https://api.weatherapi.com/v1/forecast.json?key=8e7e975c4aab4a8fb05180223250910&q=${city}&days=${days}`
       );
 
       if (!res.ok) {
@@ -49,10 +50,12 @@ export function WeatherProvider({ children }: WeatherProviderProps) {
 
   useEffect(() => {
     fetchWeather("London");
-  }, []);
+  }, [days]);
 
   return (
-    <WeatherContext.Provider value={{ weather, fetchWeather, loading, error }}>
+    <WeatherContext.Provider
+      value={{ weather, fetchWeather, loading, error, days, setDays }}
+    >
       {children}
     </WeatherContext.Provider>
   );

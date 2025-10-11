@@ -40,4 +40,6 @@ export interface WeatherContextType {
   fetchWeather: (city: string) => Promise<void>;
   loading: boolean;
   error: string | null;
+  days: number;
+  setDays: React.Dispatch<React.SetStateAction<number>>;
 }
