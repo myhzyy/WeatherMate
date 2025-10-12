@@ -9,6 +9,13 @@ export default function CityTimes() {
     tokyo: { time: "" },
   });
 
+  /** extract the logic in this useEffect to a function called getCityWeather()
+   * then call it in the useEffect so should look like:
+   * useEffect(() => {
+   *  getCityWeather()
+   * }, [])
+   *
+   */
   useEffect(() => {
     const updateData = async () => {
       const timeNow = {

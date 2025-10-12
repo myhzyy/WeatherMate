@@ -26,6 +26,7 @@
 - abstract appheader into own utils function ✅
 - header times also has weather ✅
 - error handling for Main Page
+- fix HomePage
 - hide apiKey and endpoint (Next Js)
 
 ---- TO ADD ----

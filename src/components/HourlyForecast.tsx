@@ -10,7 +10,7 @@ export default function HourlyForecast() {
       </div>
     );
   }
-
+  // type needs updating to fix this red squiggle
   const hours = weather.forecast?.forecastday[0].hour.slice(0, 7);
 
   return (

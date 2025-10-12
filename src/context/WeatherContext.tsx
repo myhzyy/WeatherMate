@@ -23,7 +23,7 @@ export function WeatherProvider({ children }: WeatherProviderProps) {
     try {
       setLoading(true);
       setError(null);
-
+      // must move this apikey into an .env variable using express
       const res = await fetch(
         `https://api.weatherapi.com/v1/forecast.json?key=8e7e975c4aab4a8fb05180223250910&q=${city}&days=${days}`
       );
