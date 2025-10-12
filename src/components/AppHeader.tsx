@@ -9,7 +9,7 @@ export default function AppHeader() {
           to="/"
           className="flex items-center gap-2 hover:opacity-80 transition-opacity"
         >
-          <h1 className="text-1xl font-semibold tracking-wide text-white">
+          <h1 className="text-[20px] font-semibold tracking-wide text-white">
             WeatherMate
           </h1>
           <span className="text-1xl">🌧️</span>

@@ -24,7 +24,7 @@
 - 7 / 14 days tracking based on user click ✅
 - add click on weatherMate brings back to main screen (Link) ✅
 - abstract appheader into own utils function ✅
-- header times also has weather
+- header times also has weather ✅
 - error handling for Main Page
 - hide apiKey and endpoint (Next Js)
 

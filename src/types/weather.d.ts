@@ -43,3 +43,16 @@ export interface WeatherContextType {
   days: number;
   setDays: React.Dispatch<React.SetStateAction<number>>;
 }
+
+export type SingleCityWeather = {
+  time: string;
+  temp?: number;
+  condition?: string;
+  icon?: string;
+};
+
+export type CityWeather = {
+  london: SingleCityWeather;
+  paris: SingleCityWeather;
+  tokyo: SingleCityWeather;
+};
