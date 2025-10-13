@@ -25,9 +25,13 @@
 - add click on weatherMate brings back to main screen (Link) ✅
 - abstract appheader into own utils function ✅
 - header times also has weather ✅
-- error handling for Main Page
+- hide apiKey and endpoint within env ✅
+- get express local server running ✅
+- get city weather api key
+- add allback colour white to main app incase image doesn't load
 - fix HomePage
-- hide apiKey and endpoint (Next Js)
+- error handling for Main Page
+- test changing app background image
 
 ---- TO ADD ----
 
