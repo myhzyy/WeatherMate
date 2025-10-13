@@ -27,12 +27,12 @@
 - header times also has weather ✅
 - hide apiKey and endpoint within env ✅
 - get express local server running ✅
-- get city weather api key
-- get weather refactor
+- get city weather api key ✅
+- get weather refactor ✅
+- fix HomePage / change theme button
+- add a favourite tab that will store the object of the api location
 - add allback colour white to main app incase image doesn't load
-- fix HomePage
 - error handling for Main Page
-- test changing app background image
 
 ---- TO ADD ----
 
