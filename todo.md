@@ -28,6 +28,7 @@
 - hide apiKey and endpoint within env ✅
 - get express local server running ✅
 - get city weather api key
+- get weather refactor
 - add allback colour white to main app incase image doesn't load
 - fix HomePage
 - error handling for Main Page
