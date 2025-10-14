@@ -30,10 +30,11 @@
 - get city weather api key ✅
 - get weather refactor ✅
 - add a favourite tab that will store the object of the api location ✅
-- quote of the day
-- weekly forecast be more clickable
+- quote of the day ✅
+- weekly forecast be more clickable ✅
 - error handling for Main Page
 - front end hosted
+- read.me
 
 ---- TO ADD ----
 

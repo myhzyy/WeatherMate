@@ -53,7 +53,7 @@ export default function Header() {
   return (
     <>
       {/* Search Button */}
-      <div className="relative w-full flex justify-center items-center">
+      <div className="relative w-full flex justify-center items-center mt-5">
         <SearchButton />
         <button onClick={() => setShowBurgerModal((prev) => !prev)}>
           <img
@@ -91,7 +91,9 @@ export default function Header() {
         </p>
 
         <button
-          className="text-white/80 text-2xl"
+          className="mt-5 px-6  bg-white-30 border border-white/40 rounded-full text-white/90 text-lg 
+             shadow-inner backdrop-blur-sm tracking-wide 
+             transform transition-transform duration-200 hover:scale-105"
           onClick={() => setShowModal(!showModal)}
         >
           Weekly forecast 📌
