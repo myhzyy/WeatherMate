@@ -29,13 +29,15 @@
 - get express local server running ✅
 - get city weather api key ✅
 - get weather refactor ✅
-- fix HomePage / change theme button
-- add a favourite tab that will store the object of the api location
-- add allback colour white to main app incase image doesn't load
+- add a favourite tab that will store the object of the api location ✅
+- quote of the day
+- weekly forecast be more clickable
 - error handling for Main Page
+- front end hosted
 
 ---- TO ADD ----
 
+- fix HomePage / change theme button
 - render background imaged based on overcase / sunny conditions
 - favourites tab
 - fact of the day about the city - lightbulb
@@ -43,3 +45,53 @@
 - readme with features
 - add random weather related jokes / quotes - see if its raining cats and dogs typing animation
 - HourlyForecast times check ()
+
+// 👷‍♂️ Engineer / Admin users
+type User = {
+id: string; // primary key
+name: string;
+role: "engineer" | "admin";
+active: boolean;
+createdAt: Date;
+updatedAt: Date;
+isSynced: Record<string, boolean>; // deviceId -> synced
+};
+
+// 🧰 Jobs assigned to engineers
+type Job = {
+id: string; // primary key
+customerId: string; // foreign key -> Customer.id
+title: string;
+type: "installation" | "repair";
+locationId: string; // foreign key -> Location.id
+assignedTo: string; // foreign key -> User.id
+isComplete: boolean;
+notes: string;
+createdAt: Date;
+updatedAt: Date;
+isSynced: Record<string, boolean>; // deviceId -> synced
+};
+
+// 📍 Job or engineer locations
+type Location = {
+id: string; // primary key
+name: string;
+address: string;
+createdAt: Date;
+updatedAt: Date;
+isSynced: Record<string, boolean>; // deviceId -> synced
+};
+
+// 🧑‍💼 Customers
+type Customer = {
+id: string; // primary key
+locationId: string; // foreign key -> Location.id
+companyName: string;
+customerName: string;
+active: boolean; // whether they’re still an active client
+createdAt: Date;
+updatedAt: Date;
+isSynced: Record<string, boolean>; // deviceId -> synced
+};
+
+supplirs
