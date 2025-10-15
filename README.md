@@ -1,73 +1,104 @@
-# React + TypeScript + Vite
+# 🌦️ BearTech Weather App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A **full-stack weather dashboard** built with **React + TypeScript + Vite**, styled using **TailwindCSS**, and powered by the **WeatherAPI** (via a custom Express backend) and **ZenQuotes.io API**.
 
-Currently, two official plugins are available:
+It features **real-time weather data**, **weekly forecasts**, **daily motivational quotes**, **local favourites**, and a **dynamic time-based background overlay**, all wrapped in a clean, modern UI.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## 🚀 Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### 🌤️ Live Weather
 
-## Expanding the ESLint configuration
+- Fetches up-to-date weather data for any city using **WeatherAPI** through an Express proxy.
+- Displays temperature, feels-like, and condition info.
+- Fully responsive layout with glassmorphic cards.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### 📅 Weekly Forecast
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- Opens a modal with the 7-day forecast.
+- Smooth transitions and clean typography.
+- Forecast data handled via your custom `/api/weather` backend endpoint.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+### 🌇 Dynamic Time Overlay
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+- Background overlay automatically adjusts based on **time of day**:
+  - ☀️ Morning → Warm golden tones
+  - 🌤️ Afternoon → Bright, high-contrast light
+  - 🌆 Evening → Soft orange gradients
+  - 🌙 Night → Deep blue with low opacity overlay
+- Achieved with `useEffect` and Tailwind dynamic class updates.
+
+### ❤️ Favourites
+
+- Save your favourite cities to **localStorage**.
+- Persistent between refreshes.
+- Easily remove cities inside the favourites modal.
+
+### 🍔 Burger Menu Modal
+
+- Sleek glass-style overlay showing your favourited cities.
+- Each entry has a “remove” button.
+- Closes via ✕ icon or clicking outside.
+
+### 💬 Daily Inspirational Quote
+
+- Fetches random daily quotes from **ZenQuotes.io**.
+- Displays a new motivational quote each day on the homepage.
+
+### 🧠 Helpful Hints
+
+- Small pop-up tooltip by the heart icon: “💾 Add this city to favourites”.
+
+---
+
+## 🧰 Tech Stack
+
+| Layer                | Technology                                                                        |
+| -------------------- | --------------------------------------------------------------------------------- |
+| **Frontend**         | React + TypeScript + Vite                                                         |
+| **Styling**          | TailwindCSS                                                                       |
+| **State Management** | React Hooks (`useState`, `useEffect`, Context for weather)                        |
+| **Backend**          | Node.js + Express                                                                 |
+| **APIs**             | [WeatherAPI](https://www.weatherapi.com/) & [ZenQuotes.io](https://zenquotes.io/) |
+| **Storage**          | LocalStorage (for favourites)                                                     |
+| **Build Tools**      | Vite                                                                              |
+
+---
+
+## ⚙️ Project Setup
+
+### 🖥️ 1. Clone the repository
+
+```bash
+git clone https://github.com/myhzyy/WeatherMate
+cd beartech-weather-app
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### 🖥️ 2. Install depencies
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+npm install
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+### 🖥️ 3. set up enviorment variable
+
+- Get your API key from WeatherAPI.com
+- Sign up for a free account and copy your personal key
+- example env file :
+- WEATHER_API_KEY=your_api_key
+- PORT=5050
+
+### 🖥️ 4. Run the Backend Server
+
+- npm start
+- this will start your express server at
+- http://localhost:5050
+- You should see 'Server running on http://localhost:5050'
+
+### 🖥️ 5. Run the Frontend (Vite + React)
+
+- In a seperate terminal, run:
+- npm run dev
+- this will start the frontend on
+- http://localhost:5173
+
+- Your frontend will automatically proxy API requests like /api/weather?city=London to your Express backend — so you don’t need to expose your API key in the frontend.

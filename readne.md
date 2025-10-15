@@ -1,6 +1,6 @@
 # 🌦️ BearTech Weather App
 
-A beautifully designed **full-stack weather dashboard** built with **React + TypeScript + Vite**, styled using **TailwindCSS**, and powered by the **WeatherAPI** (via a custom Express backend) and **ZenQuotes.io API**.
+A **full-stack weather dashboard** built with **React + TypeScript + Vite**, styled using **TailwindCSS**, and powered by the **WeatherAPI** (via a custom Express backend) and **ZenQuotes.io API**.
 
 It features **real-time weather data**, **weekly forecasts**, **daily motivational quotes**, **local favourites**, and a **dynamic time-based background overlay**, all wrapped in a clean, modern UI.
 
@@ -14,6 +14,12 @@ It features **real-time weather data**, **weekly forecasts**, **daily motivation
 - Displays temperature, feels-like, and condition info.
 - Fully responsive layout with glassmorphic cards.
 
+### 📅 Weekly Forecast
+
+- Opens a modal with the 7-day forecast.
+- Smooth transitions and clean typography.
+- Forecast data handled via your custom `/api/weather` backend endpoint.
+
 ### 🌇 Dynamic Time Overlay
 
 - Background overlay automatically adjusts based on **time of day**:
@@ -22,12 +28,6 @@ It features **real-time weather data**, **weekly forecasts**, **daily motivation
   - 🌆 Evening → Soft orange gradients
   - 🌙 Night → Deep blue with low opacity overlay
 - Achieved with `useEffect` and Tailwind dynamic class updates.
-
-### 📅 Weekly Forecast
-
-- Opens a modal with the 7-day forecast.
-- Smooth transitions and clean typography.
-- Forecast data handled via your custom `/api/weather` backend endpoint.
 
 ### ❤️ Favourites
 
@@ -45,12 +45,10 @@ It features **real-time weather data**, **weekly forecasts**, **daily motivation
 
 - Fetches random daily quotes from **ZenQuotes.io**.
 - Displays a new motivational quote each day on the homepage.
-- Uses a CORS-friendly fetch wrapper with [AllOrigins](https://api.allorigins.win/).
 
 ### 🧠 Helpful Hints
 
 - Small pop-up tooltip by the heart icon: “💾 Add this city to favourites”.
-- Auto disappears after a few seconds for a polished UX.
 
 ---
 
@@ -64,7 +62,7 @@ It features **real-time weather data**, **weekly forecasts**, **daily motivation
 | **Backend**          | Node.js + Express                                                                 |
 | **APIs**             | [WeatherAPI](https://www.weatherapi.com/) & [ZenQuotes.io](https://zenquotes.io/) |
 | **Storage**          | LocalStorage (for favourites)                                                     |
-| **Build Tools**      | Vite, ESLint, Prettier                                                            |
+| **Build Tools**      | Vite                                                                              |
 
 ---
 
@@ -73,6 +71,34 @@ It features **real-time weather data**, **weekly forecasts**, **daily motivation
 ### 🖥️ 1. Clone the repository
 
 ```bash
-git clone https://github.com/YOUR_GITHUB_USERNAME/beartech-weather-app.git
+git clone https://github.com/myhzyy/WeatherMate
 cd beartech-weather-app
 ```
+
+### 🖥️ 2. Install depencies
+
+npm install
+
+### 🖥️ 3. set up enviorment variable
+
+- Get your API key from WeatherAPI.com
+- Sign up for a free account and copy your personal key
+- example env file :
+- WEATHER_API_KEY=your_api_key
+- PORT=5050
+
+### 🖥️ 4. Run the Backend Server
+
+- npm start
+- this will start your express server at
+- http://localhost:5050
+- You should see 'Server running on http://localhost:5050'
+
+### 🖥️ 5. Run the Frontend (Vite + React)
+
+- In a seperate terminal, run:
+- npm run dev
+- this will start the frontend on
+- http://localhost:5173
+
+- Your frontend will automatically proxy API requests like /api/weather?city=London to your Express backend — so you don’t need to expose your API key in the frontend.
