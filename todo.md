@@ -35,7 +35,8 @@
 - error handling for Main Page ✅
 - close button hover on favourite cities modal ✅
 - make favourite button more obvious ✅
-- test on smaller viewport - iphone se etc
+- test on smaller viewport - iphone se etc ✅
+- hourly forecast type ✅
 - read.me
 
 ---- TO ADD (non MVP) ----

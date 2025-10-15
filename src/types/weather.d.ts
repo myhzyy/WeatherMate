@@ -7,6 +7,7 @@ export interface WeatherData {
     region: string;
     country: string;
     localtime: string;
+    tz_id: string;
   };
   current: {
     temp_c: number;
@@ -17,7 +18,6 @@ export interface WeatherData {
     };
     wind_kph: number;
     humidity: number;
-    is_day: number;
   };
   forecast?: {
     forecastday: {
@@ -31,6 +31,14 @@ export interface WeatherData {
           icon: string;
         };
       };
+      hour: {
+        time: string;
+        temp_c: number;
+        condition: {
+          text: string;
+          icon: string;
+        };
+      }[];
     }[];
   };
 }

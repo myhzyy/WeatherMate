@@ -3,7 +3,7 @@ import { useWeather } from "../hooks/useWeather";
 import SearchButton from "./SearchButton";
 import ForecastModel from "./ForecastModel";
 import burgerMenu from "../assets/burger-menu.svg";
-import favouritedHeart from "../assets/favourited-heart.svg";
+import locationPin from "../assets/location-pin.svg";
 
 export default function Header() {
   const { weather, loading } = useWeather();
@@ -11,6 +11,8 @@ export default function Header() {
   const [favouritedCities, setfavouritedCities] = useState<string[]>([]);
   const [showBurgerModal, setShowBurgerModal] = useState(false);
   const [showTooltip, setShowTooltip] = useState(false);
+
+  const timezoneRegion = weather?.location.tz_id.split("/")[0];
 
   useEffect(() => {
     const stored = localStorage.getItem("favourites");
@@ -60,7 +62,7 @@ export default function Header() {
           <img
             src={burgerMenu}
             alt="Menu"
-            className="absolute right-4 top-4 w-6 h-6 invert brightness-0"
+            className="absolute right-4 top-4 w-6 h-6 invert brightness-0 hover:scale-105 cursor-pointer"
           />
         </button>
       </div>
@@ -68,7 +70,9 @@ export default function Header() {
       {/* Main Weather Info */}
       <div className="text-center w-[80%] text-white ">
         <div className="flex justify-center items-center gap-2 mb-2 relative">
-          <h2 className="uppercase tracking-widest text-cyan-300">Home</h2>
+          <h2 className="uppercase tracking-widest text-cyan-300">
+            {timezoneRegion}
+          </h2>
 
           <div
             className="relative"
@@ -80,7 +84,7 @@ export default function Header() {
               onClick={() => buttonClick()}
             >
               <img
-                src={favouritedHeart}
+                src={locationPin}
                 alt="Favourited heart"
                 className="w-4 invert brightness-0"
               />

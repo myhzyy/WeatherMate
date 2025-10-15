@@ -10,8 +10,10 @@ export default function HourlyForecast() {
       </div>
     );
   }
-  // type needs updating to fix this red squiggle
-  const hours = weather.forecast?.forecastday[0].hour.slice(0, 7);
+
+  const hours = weather.forecast?.forecastday?.[0]?.hour?.slice(0, 7) || [];
+
+  console.log(hours);
 
   return (
     <div className="w-[80%] mt-6 p-4 rounded-[16px] bg-white/10 backdrop-blur-md border border-white/20 text-white">
@@ -28,7 +30,7 @@ export default function HourlyForecast() {
               <p className="text-sm text-grey-300 mb-2">{timeLabel}</p>
               <img
                 src={hour.condition.icon}
-                alt=""
+                alt="weather conditions"
                 className="w-[32px] h-[32px] mb-2"
               />
 

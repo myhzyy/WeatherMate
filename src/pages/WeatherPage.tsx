@@ -18,7 +18,13 @@ export default function WeatherPage() {
     return <p className="text-center mt-10">No weather data available</p>;
 
   return (
-    <div className="flex flex-col items-center w-full">
+    <div
+      className="
+  flex flex-col items-center w-full
+  pt-[90px] sm:pt-[100px] md:pt-[110px]
+  max-[400px]:pt-[300px]
+"
+    >
       <Header />
       <SummaryCard />
       <WeatherDetails />
