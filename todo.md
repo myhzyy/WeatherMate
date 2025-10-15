@@ -33,15 +33,12 @@
 - quote of the day ✅
 - weekly forecast be more clickable ✅
 - error handling for Main Page ✅
+- close button hover on favourite cities modal ✅
+- make favourite button more obvious ✅
+- test on smaller viewport - iphone se etc
 - read.me
 
----- TO ADD ----
+---- TO ADD (non MVP) ----
 
-- fix HomePage / change theme button
+- change theme button
 - render background imaged based on overcase / sunny conditions
-- favourites tab
-- fact of the day about the city - lightbulb
-- Math.round decimels
-- readme with features
-- add random weather related jokes / quotes - see if its raining cats and dogs typing animation
-- HourlyForecast times check ()

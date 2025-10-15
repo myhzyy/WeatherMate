@@ -1,7 +1,8 @@
 # 🌦️ BearTech Weather App
 
-A designed weather dashboard built with **React + Vite**, styled using **TailwindCSS**, and powered by the **WeatherAPI** and **ZenQuotes APIs**.  
-It features real-time weather data, weekly forecasts, daily inspirational quotes, and local favourites — all wrapped in a clean, modern UI.
+A beautifully designed **full-stack weather dashboard** built with **React + TypeScript + Vite**, styled using **TailwindCSS**, and powered by the **WeatherAPI** (via a custom Express backend) and **ZenQuotes.io API**.
+
+It features **real-time weather data**, **weekly forecasts**, **daily motivational quotes**, **local favourites**, and a **dynamic time-based background overlay**, all wrapped in a clean, modern UI.
 
 ---
 
@@ -9,49 +10,65 @@ It features real-time weather data, weekly forecasts, daily inspirational quotes
 
 ### 🌤️ Live Weather
 
-- Fetches live weather data for any city using the **WeatherAPI**.
-- Displays temperature, feels-like data, and current conditions.
-- Automatically refreshes data at set intervals.
+- Fetches up-to-date weather data for any city using **WeatherAPI** through an Express proxy.
+- Displays temperature, feels-like, and condition info.
+- Fully responsive layout with glassmorphic cards.
+
+### 🌇 Dynamic Time Overlay
+
+- Background overlay automatically adjusts based on **time of day**:
+  - ☀️ Morning → Warm golden tones
+  - 🌤️ Afternoon → Bright, high-contrast light
+  - 🌆 Evening → Soft orange gradients
+  - 🌙 Night → Deep blue with low opacity overlay
+- Achieved with `useEffect` and Tailwind dynamic class updates.
 
 ### 📅 Weekly Forecast
 
-- Displays a modal with a 7-day weather forecast.
-- Clean, responsive, and accessible design.
-- Smooth transition animations powered by TailwindCSS.
+- Opens a modal with the 7-day forecast.
+- Smooth transitions and clean typography.
+- Forecast data handled via your custom `/api/weather` backend endpoint.
 
 ### ❤️ Favourites
 
 - Save your favourite cities to **localStorage**.
 - Persistent between refreshes.
-- Remove cities directly inside the favourites modal.
+- Easily remove cities inside the favourites modal.
 
 ### 🍔 Burger Menu Modal
 
-- Opens a sleek glass-style overlay showing your favourited cities.
-- Each entry has a “remove” button for easy management.
-- Closes via the ✕ icon or clicking outside.
+- Sleek glass-style overlay showing your favourited cities.
+- Each entry has a “remove” button.
+- Closes via ✕ icon or clicking outside.
 
-### 💬 Daily Quote
+### 💬 Daily Inspirational Quote
 
-- Fetches daily inspirational quotes from the **ZenQuotes.io API**.
-- Displays a new quote each day on the homepage.
+- Fetches random daily quotes from **ZenQuotes.io**.
+- Displays a new motivational quote each day on the homepage.
+- Uses a CORS-friendly fetch wrapper with [AllOrigins](https://api.allorigins.win/).
+
+### 🧠 Helpful Hints
+
+- Small pop-up tooltip by the heart icon: “💾 Add this city to favourites”.
+- Auto disappears after a few seconds for a polished UX.
 
 ---
 
 ## 🧰 Tech Stack
 
-| Layer                | Technology                            |
-| -------------------- | ------------------------------------- |
-| **Frontend**         | React + TypeScript + Vite             |
-| **Styling**          | TailwindCSS                           |
-| **State Management** | React Hooks (`useState`, `useEffect`) |
-| **Backend**          | Node.js + Express                     |
-| **APIs**             | WeatherAPI & ZenQuotes.io             |
-| **Storage**          | LocalStorage (for favourites)         |
+| Layer                | Technology                                                                        |
+| -------------------- | --------------------------------------------------------------------------------- |
+| **Frontend**         | React + TypeScript + Vite                                                         |
+| **Styling**          | TailwindCSS                                                                       |
+| **State Management** | React Hooks (`useState`, `useEffect`, Context for weather)                        |
+| **Backend**          | Node.js + Express                                                                 |
+| **APIs**             | [WeatherAPI](https://www.weatherapi.com/) & [ZenQuotes.io](https://zenquotes.io/) |
+| **Storage**          | LocalStorage (for favourites)                                                     |
+| **Build Tools**      | Vite, ESLint, Prettier                                                            |
 
 ---
 
-## ⚙️ Installation & Setup
+## ⚙️ Project Setup
 
 ### 🖥️ 1. Clone the repository
 

@@ -10,6 +10,7 @@ export default function Header() {
   const [showModal, setShowModal] = useState(false);
   const [favouritedCities, setfavouritedCities] = useState<string[]>([]);
   const [showBurgerModal, setShowBurgerModal] = useState(false);
+  const [showTooltip, setShowTooltip] = useState(false);
 
   useEffect(() => {
     const stored = localStorage.getItem("favourites");
@@ -63,23 +64,42 @@ export default function Header() {
           />
         </button>
       </div>
+
+      {/* Main Weather Info */}
       <div className="text-center w-[80%] text-white ">
-        <div className="flex justify-center items-center gap-2 mb-2">
-          <h2 className="uppercase tracking-widest text-cyan-30">Home</h2>
-          <button
-            className="transform transition-transform hover:scale-110"
-            onClick={() => buttonClick()}
+        <div className="flex justify-center items-center gap-2 mb-2 relative">
+          <h2 className="uppercase tracking-widest text-cyan-300">Home</h2>
+
+          <div
+            className="relative"
+            onMouseEnter={() => setShowTooltip(true)}
+            onMouseLeave={() => setShowTooltip(false)}
           >
-            <img
-              src={favouritedHeart}
-              alt="Favourited heart"
-              className="w-4 invert brightness-0"
-            />
-          </button>
+            <button
+              className="transform transition-transform hover:scale-110"
+              onClick={() => buttonClick()}
+            >
+              <img
+                src={favouritedHeart}
+                alt="Favourited heart"
+                className="w-4 invert brightness-0"
+              />
+            </button>
+
+            {/* Tooltip */}
+            {showTooltip && (
+              <div
+                className="absolute top-[-40px] left-1/2 -translate-x-1/2 bg-white/90 text-black 
+                           text-[11px] font-medium px-3 py-1 rounded-md shadow-md border border-white/30 
+                           backdrop-blur-sm whitespace-nowrap animate-fade-in"
+              >
+                💾 Add this city to favourites
+              </div>
+            )}
+          </div>
         </div>
 
         <h1 className="text-2xl font-semibold mb-1">{weather.location.name}</h1>
-
         <h2 className="text-6xl font-light mb-2">{weather.current.temp_c}°</h2>
 
         <p className="text-lg text-white/80 mb-1">
@@ -91,14 +111,16 @@ export default function Header() {
         </p>
 
         <button
-          className="mt-5 px-6  bg-white-30 border border-white/40 rounded-full text-white/90 text-lg 
+          className="mt-5 px-6 bg-white-30 border border-white/40 rounded-full text-white/90 text-lg 
              shadow-inner backdrop-blur-sm tracking-wide 
-             transform transition-transform duration-200 hover:scale-105"
+             transform transition-transform duration-200 hover:scale-105 cursor-pointer"
           onClick={() => setShowModal(!showModal)}
         >
           Weekly forecast 📌
         </button>
       </div>
+
+      {/* Weekly forecast modal */}
       {showModal && (
         <ForecastModel
           forecast={forecast}
@@ -106,12 +128,18 @@ export default function Header() {
         />
       )}
 
+      {/* Favourites modal */}
       {showBurgerModal && (
-        <div className=" fixed inset-0 z-[9999] flex justify-center items-center bg-black/60 backdrop-blur-sm ">
-          <div className="w-[90%] sm:w-[400px] rounded-2xl p-6 text-white shadow-2xl border border-white/10 ">
+        <div className="fixed inset-0 z-[9999] flex justify-center items-center bg-black/60 backdrop-blur-sm">
+          <div className="w-[90%] sm:w-[400px] rounded-2xl p-6 text-white shadow-2xl border border-white/10">
             <div className="flex justify-between">
               <h1 className="font-bold text-xl mb-4">Your favourite cities</h1>
-              <p onClick={() => setShowBurgerModal((prev) => !prev)}>x</p>
+              <p
+                onClick={() => setShowBurgerModal((prev) => !prev)}
+                className="cursor-pointer hover:text-cyan-400 transition"
+              >
+                ✕
+              </p>
             </div>
 
             {favouritedCities.length === 0 && (
@@ -122,11 +150,15 @@ export default function Header() {
               return (
                 <div
                   key={index}
-                  className="border border-white/30 rounded-[10px] p-2.5 mb-2 bg-gray-700 flex
-                  justify-between"
+                  className="border border-white/30 rounded-[10px] p-2.5 mb-2 bg-gray-700 flex justify-between"
                 >
                   <p>{city}</p>
-                  <button onClick={() => deleteFavouritedCity(city)}>x</button>
+                  <button
+                    onClick={() => deleteFavouritedCity(city)}
+                    className="hover:text-red-400 transition"
+                  >
+                    ✕
+                  </button>
                 </div>
               );
             })}
