@@ -32,8 +32,7 @@
 - add a favourite tab that will store the object of the api location ✅
 - quote of the day ✅
 - weekly forecast be more clickable ✅
-- error handling for Main Page
-- front end hosted
+- error handling for Main Page ✅
 - read.me
 
 ---- TO ADD ----
