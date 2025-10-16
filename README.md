@@ -102,3 +102,7 @@ npm install
 - http://localhost:5173
 
 - Your frontend will automatically proxy API requests like /api/weather?city=London to your Express backend — so you don’t need to expose your API key in the frontend.
+
+### Last notes
+
+- I purposefully left in the todo.md, just incase you wanted to see my thought process going through this
