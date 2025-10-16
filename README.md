@@ -68,7 +68,7 @@ It features **real-time weather data**, **weekly forecasts**, **daily motivation
 
 ## Pre setup notes
 
-- There are two npm install steps - one for the backend (/backend) and one for the frontend (root folder)
+- There are two npm install steps - one for the backend (/Backend) and one for the frontend (/Frontend)
 
 - Your API Key tays safely hidden in the backend .env file
 
@@ -85,11 +85,12 @@ cd weatherMate
 
 ### 🖥️ 2. Set up Backend
 
-cd backend
-npm install
-touch .env
+- cd backend
+- npm install
+- touch .env
+- open .env
 
-### 🖥️ 3. Set up enviorment variable
+### 🖥️ 3. Set up enviroment variable
 
 - Get your API key from WeatherAPI.com
 - Sign up for a free account and copy your personal key

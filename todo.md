@@ -40,7 +40,11 @@
 - search button note ✅
 - weather context dependancy ✅
 - changing theme based on time
-- read.me
+- read.me ✅
+
+---- FILE CHECKS ----
+
+- backend ✅
 
 ---- TO ADD (non MVP) ----
 
