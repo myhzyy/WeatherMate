@@ -33,31 +33,30 @@ export default function ForecastModel({ forecast, onClose }: ForecastProps) {
         </select>
 
         {/* Scroll container */}
-        <div className="w-full flex flex-row items-center gap-4 overflow-x-auto scroll-smooth px-2">
-          {forecast.map((day, index) => {
-            return (
-              <div
-                key={index}
-                className="min-w-[110px] h-[140px] border border-white/20 rounded-[16px] bg-white/10 shadow-md backdrop-blur-lg flex flex-col items-center justify-center hover:scale-105 ease-in-out"
-              >
-                <p className="text-sm text-white/80 mb-1">
-                  {new Date(day.date).toLocaleDateString("en-GB", {
-                    weekday: "short",
-                    day: "numeric",
-                  })}
-                </p>
-                <img
-                  src={day.day.condition.icon}
-                  alt={day.day.condition.text}
-                  className="w-[40px] h-[40px] mb-1"
-                />
-                <p className="text-white/90 text-sm font-semibold">
-                  {Math.round(day.day.maxtemp_c)}° /
-                  {Math.round(day.day.mintemp_c)}°
-                </p>
-              </div>
-            );
-          })}
+        {/* Scroll container */}
+        <div className="w-full flex flex-row items-center gap-4 overflow-x-auto scroll-smooth px-2 no-scrollbar">
+          {forecast.map((day, index) => (
+            <div
+              key={index}
+              className="min-w-[110px] h-[140px] border border-white/20 rounded-[16px] bg-white/10 shadow-md backdrop-blur-lg flex flex-col items-center justify-center hover:scale-105 ease-in-out transition-transform"
+            >
+              <p className="text-sm text-white/80 mb-1">
+                {new Date(day.date).toLocaleDateString("en-GB", {
+                  weekday: "short",
+                  day: "numeric",
+                })}
+              </p>
+              <img
+                src={day.day.condition.icon}
+                alt={day.day.condition.text}
+                className="w-[40px] h-[40px] mb-1"
+              />
+              <p className="text-white/90 text-sm font-semibold">
+                {Math.round(day.day.maxtemp_c)}° /{" "}
+                {Math.round(day.day.mintemp_c)}°
+              </p>
+            </div>
+          ))}
         </div>
       </div>
     </div>
