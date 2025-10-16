@@ -93,7 +93,7 @@ touch .env
 
 - Get your API key from WeatherAPI.com
 - Sign up for a free account and copy your personal key
-- Open the file and add your API Key + port
+- Open the file and add your API Key + PORT=5050
 
 **EXAMPLE .ENV FILE STRUCTURE**
 
@@ -110,7 +110,8 @@ PORT=5050
 
 ### 🖥️ 5. Set up and run the Frontend (Vite + React)
 
-- In a seperate terminal, run:
+- In a seperate terminal, from the root directory, run
+- cd Frontend
 - npm install
 - npm run dev
 - this will start the frontend on
