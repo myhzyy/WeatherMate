@@ -37,7 +37,7 @@ export default function ForecastModel({ forecast, onClose }: ForecastProps) {
           {forecast.map((day, index) => (
             <div
               key={index}
-              className="min-w-[110px] h-[140px] border border-white/20 rounded-[16px] bg-white/10 shadow-md backdrop-blur-lg flex flex-col items-center justify-center hover:scale-105 ease-in-out transition-transform"
+              className="min-w-[110px] h-[140px] border border-white/20 rounded-[16px] bg-white/10 shadow-md backdrop-blur-lg flex flex-col items-center justify-center  ease-in-out transition-transform"
             >
               <p className="text-sm text-white/80 mb-1">
                 {new Date(day.date).toLocaleDateString("en-GB", {
