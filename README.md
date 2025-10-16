@@ -85,7 +85,7 @@ cd WeatherMate
 
 ### 🖥️ 2. Set up Backend
 
-- cd backend
+- cd Backend
 - npm install
 - touch .env
 - open .env
