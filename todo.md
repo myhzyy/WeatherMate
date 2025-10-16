@@ -37,8 +37,9 @@
 - make favourite button more obvious ✅
 - test on smaller viewport - iphone se etc ✅
 - hourly forecast type ✅
-- search button note
-- weather context dependancy
+- search button note ✅
+- weather context dependancy ✅
+- changing theme based on time
 - read.me
 
 ---- TO ADD (non MVP) ----

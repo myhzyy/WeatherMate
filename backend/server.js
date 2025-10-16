@@ -9,6 +9,8 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+console.log("✅ WEATHER_API_KEY Loaded:", !!process.env.WEATHER_API_KEY);
+
 app.get("/", (req, res) => {
   res.send("Backend is running!");
 });

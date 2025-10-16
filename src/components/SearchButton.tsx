@@ -15,7 +15,6 @@ export default function SearchButton() {
 
   useEffect(() => {
     if (error) {
-      // move the logic into a function
       setShowToast(true);
       const timer = setTimeout(() => setShowToast(false), 3000);
       return () => clearTimeout(timer);

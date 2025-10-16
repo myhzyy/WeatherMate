@@ -83,21 +83,25 @@ npm install
 
 - Get your API key from WeatherAPI.com
 - Sign up for a free account and copy your personal key
-- example env file :
-- WEATHER_API_KEY=your_api_key
-- PORT=5050
+- create .env in the backend folder
+
+**EXAMPLE .ENV FILE STRUCTURE**
+
+WEATHER_API_KEY=your_api_key
+PORT=5050
 
 ### 🖥️ 4. Run the Backend Server
 
 - npm start
 - this will start your express server at
 - http://localhost:5050
-- You should see 'Server running on http://localhost:5050'
+- You should see '✅ WEATHER_API_KEY Loaded: true'
+- and 'Server running on http://localhost:5050'
 
 ### 🖥️ 5. Run the Frontend (Vite + React)
 
 - In a seperate terminal, run:
-- npm run dev
+- npm run dev in global file
 - this will start the frontend on
 - http://localhost:5173
 
@@ -105,4 +109,10 @@ npm install
 
 ### Last notes
 
-- I purposefully left in the todo.md, just incase you wanted to see my thought process going through this
+- I purposefully left in the todo.md, just incase you wanted to see my thought process going through this.
+
+- Thanks for checking this out! This project was a lot of fun to build. I actually had to stop myself from adding more features 😅 (I love front end!)
+
+- I really wanted to prove myself by using your exact tech stack (React, TypeScript, and Tailwind).
+
+- Appreciate you taking the time to explore it!
