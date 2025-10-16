@@ -33,7 +33,6 @@ export default function ForecastModel({ forecast, onClose }: ForecastProps) {
         </select>
 
         {/* Scroll container */}
-        {/* Scroll container */}
         <div className="w-full flex flex-row items-center gap-4 overflow-x-auto scroll-smooth px-2 no-scrollbar">
           {forecast.map((day, index) => (
             <div
