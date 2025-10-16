@@ -1,6 +1,6 @@
 # 🌦️ BearTech Weather App
 
-A **full-stack weather dashboard** built with **React + TypeScript + Vite**, styled using **TailwindCSS**, and powered by the **WeatherAPI** (via a custom Express backend) and **ZenQuotes.io API**.
+A **full-stack weather dashboard** built with **React + TypeScript**, styled using **TailwindCSS**, and powered by the **WeatherAPI** (via a custom Express backend) and **ZenQuotes.io API**.
 
 It features **real-time weather data**, **weekly forecasts**, **daily motivational quotes**, **local favourites**, and a **dynamic time-based background overlay**, all wrapped in a clean, modern UI.
 
@@ -16,17 +16,15 @@ It features **real-time weather data**, **weekly forecasts**, **daily motivation
 
 ### 📅 Weekly Forecast
 
-- Opens a modal with the 7-day forecast.
+- Opens a modal with the 7 day/14 day forecast.
 - Smooth transitions and clean typography.
 - Forecast data handled via your custom `/api/weather` backend endpoint.
 
 ### 🌇 Dynamic Time Overlay
 
 - Background overlay automatically adjusts based on **time of day**:
-  - ☀️ Morning → Warm golden tones
-  - 🌤️ Afternoon → Bright, high-contrast light
-  - 🌆 Evening → Soft orange gradients
-  - 🌙 Night → Deep blue with low opacity overlay
+  - ☀️ Morning / After → Warm golden tones
+  - 🌆 Evening / Night → Soft orange gradients
 - Achieved with `useEffect` and Tailwind dynamic class updates.
 
 ### ❤️ Favourites
@@ -68,22 +66,34 @@ It features **real-time weather data**, **weekly forecasts**, **daily motivation
 
 ## ⚙️ Project Setup
 
+## Pre setup notes
+
+- There are two npm install steps - one for the backend (/backend) and one for the frontend (root folder)
+
+- Your API Key tays safely hidden in the backend .env file
+
+- Your frontend will automatically proxy API requests like /api/weather?city=London to your Express backend — so you don’t need to expose your API key in the frontend.
+
+-
+
 ### 🖥️ 1. Clone the repository
 
 ```bash
 git clone https://github.com/myhzyy/WeatherMate
-cd beartech-weather-app
+cd weatherMate
 ```
 
-### 🖥️ 2. Install depencies
+### 🖥️ 2. Set up Backend
 
+cd backend
 npm install
+touch .env
 
-### 🖥️ 3. set up enviorment variable
+### 🖥️ 3. Set up enviorment variable
 
 - Get your API key from WeatherAPI.com
 - Sign up for a free account and copy your personal key
-- create .env in the backend folder
+- Open the file and add your API Key + port
 
 **EXAMPLE .ENV FILE STRUCTURE**
 
@@ -98,14 +108,13 @@ PORT=5050
 - You should see '✅ WEATHER_API_KEY Loaded: true'
 - and 'Server running on http://localhost:5050'
 
-### 🖥️ 5. Run the Frontend (Vite + React)
+### 🖥️ 5. Set up and run the Frontend (Vite + React)
 
 - In a seperate terminal, run:
-- npm run dev in global file
+- npm install
+- npm run dev
 - this will start the frontend on
 - http://localhost:5173
-
-- Your frontend will automatically proxy API requests like /api/weather?city=London to your Express backend — so you don’t need to expose your API key in the frontend.
 
 ### Last notes
 
