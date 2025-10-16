@@ -40,6 +40,7 @@
 - search button note ✅
 - weather context dependancy ✅
 - changing theme based on time
+- remove slider in weekly forecast ✅
 - read.me ✅
 
 ---- FILE CHECKS ----
@@ -48,5 +49,5 @@
 
 ---- TO ADD (non MVP) ----
 
-- change theme button
-- render background imaged based on overcase / sunny conditions
+- change theme button (Math.random through an array)
+-

@@ -80,7 +80,7 @@ It features **real-time weather data**, **weekly forecasts**, **daily motivation
 
 ```bash
 git clone https://github.com/myhzyy/WeatherMate
-cd weatherMate
+cd WeatherMate
 ```
 
 ### 🖥️ 2. Set up Backend
