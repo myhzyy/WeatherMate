@@ -13,7 +13,6 @@ export default function HourlyForecast() {
 
   const hours = weather.forecast?.forecastday?.[0]?.hour?.slice(0, 7) || [];
 
-
   return (
     <div className="w-[80%] mt-6 p-4 rounded-[16px] bg-white/10 backdrop-blur-md border border-white/20 text-white">
       <div className="flex justify-between text-center">

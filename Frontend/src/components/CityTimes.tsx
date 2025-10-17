@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { getCityWeatheData } from "../utils/getCityWeatherData.";
+import { getCityWeatherData } from "../utils/getCityWeatherData.";
 import type { CityWeather } from "../types/weather";
 
 export default function CityTimes() {
@@ -10,9 +10,9 @@ export default function CityTimes() {
   });
 
   useEffect(() => {
-    getCityWeatheData(setData);
+    getCityWeatherData(setData);
 
-    const interval = setInterval(() => getCityWeatheData(setData), 60000);
+    const interval = setInterval(() => getCityWeatherData(setData), 60000);
     return () => clearInterval(interval);
   }, []);
 

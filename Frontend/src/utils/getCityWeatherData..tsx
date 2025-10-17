@@ -1,7 +1,7 @@
 import { getCityWeather } from "./getCityWeather";
 import type { CityWeather } from "../types/weather";
 
-export async function getCityWeatheData(
+export async function getCityWeatherData(
   setData: React.Dispatch<React.SetStateAction<CityWeather>>
 ) {
   const timeNow = {
